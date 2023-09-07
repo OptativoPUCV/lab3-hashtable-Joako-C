@@ -80,10 +80,32 @@ HashMap* createMap(long capacity) {
 }
 
 
-void eraseMap(HashMap * map,  char * key) {    
+void eraseMap(HashMap * map,  char * key) {
+  if (map == NULL || key == NULL) {
+    return;
+  }
 
+  long i = hash(key, map->capacity);
 
+  while (map->buckets[i] != NULL) {
+    Pair* current = map->buckets[i];
+    if (is_equal(current->key, key)) {
+      free(current->key);
+      free(current->value);
+      free(current);
+      map->buckets[i] = NULL;
+      map->size--;
+      return;
+    }
+
+    i = (i + 1) % map->capacity;
+        
+    if (i == hash(key, map->capacity)) {
+      return;
+    }
+  }
 }
+
 
 Pair* searchMap(HashMap* map, char* key) {
   if (map == NULL || key == NULL) {
