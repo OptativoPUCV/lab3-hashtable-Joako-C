@@ -127,10 +127,9 @@ Pair* firstMap(HashMap* map) {
   }
 
   for (long i = 0; i < map->capacity; i++) {
-    Pair* currentPair = map->buckets[i];
-    if (currentPair != NULL && currentPair->key != NULL) {
-      map->current = i;
-      return currentPair;
+    if (map->buckets[i] != NULL && map->buckets[i]->key != NULL) {
+      map->current = i; // Actualizar el índice actual
+      return map->buckets[i];
     }
   }
 
