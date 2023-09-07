@@ -48,12 +48,12 @@ void insertMap(HashMap* map, char* key, void* value) {
 
     Pair* new_pair = createPair(key, value);
     if (new_pair == NULL) {
+      new_pair->next = map->buckets[index];
+      map->buckets[index] = new_pair;
+      map->size++;
         return;
     }
 
-    new_pair->next = map->buckets[index];
-    map->buckets[index] = new_pair;
-    map->size++;
 }
 
 
