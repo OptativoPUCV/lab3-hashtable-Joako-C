@@ -85,3 +85,13 @@ hashmap.c:100:26: error: ‘Pair’ has no member named ‘next’
       |                          ^~
 Compilation failed
 d979199
+Thu 07 Sep 2023 04:04:26 PM UTC: 
+ hashmap.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘searchMap’:
+hashmap.c:96:37: error: array subscript is not an integer
+   96 |         Pair* current = map->buckets[index];
+      |                                     ^
+Compilation failed
+ce0b286

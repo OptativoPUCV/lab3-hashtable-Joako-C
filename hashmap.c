@@ -92,16 +92,17 @@ Pair* searchMap(HashMap* map, char* key) {
 
     long i = hash(key, map->capacity);
 
-    Pair* current = map->buckets[i];
-    while (current != NULL) {
+    while (map->buckets[i] != NULL) {
+        Pair* current = map->buckets[index];
         if (is_equal(current->key, key)) {
             return current;
         }
-        current = current->next;
+        i = (i + 1) % map->capacity;
     }
 
     return NULL;
 }
+
 
 
 Pair * firstMap(HashMap * map) {
