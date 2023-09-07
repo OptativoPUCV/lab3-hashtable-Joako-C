@@ -132,8 +132,14 @@ Pair * firstMap(HashMap * map) {
   return NULL;
 }
 
-
 Pair * nextMap(HashMap * map) {
-
-    return NULL;
+  for(int i = map->current +1; i < map->capacity;i++){
+    struct Pair* currentpair = map->buckets[i];
+    if(currentpair != NULL && currentpair->key != NULL){
+      map->current = i;
+      return currentpair;
+    }
+  }
+  map->current = -1;
+  return NULL;
 }
