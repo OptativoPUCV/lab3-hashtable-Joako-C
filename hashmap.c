@@ -120,7 +120,7 @@ Pair* searchMap(HashMap* map, char* key) {
 
     i = (i + 1) % map->capacity;
 
-    if (index == original_index) {
+    if (i == original_i) {
       break;
     }
   }
