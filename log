@@ -214,3 +214,14 @@ hashmap.c:96:22: error: ‘i_index’ undeclared (first use in this function); d
 hashmap.c:96:22: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 95a62fd
+Thu 07 Sep 2023 04:32:22 PM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘eraseMap’:
+hashmap.c:85:39: error: ‘i’ may be used uninitialized in this function [-Werror=maybe-uninitialized]
+   85 |     int i = (hash(key, map->capacity) + i) % map->capacity;
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+59bb5aa

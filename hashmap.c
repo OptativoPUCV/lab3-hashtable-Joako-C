@@ -93,7 +93,7 @@ void eraseMap(HashMap* map, char* key) {
     if (strcmp(currentPair->key, key) == 0) {
       currentPair->key = NULL;
       map->size--;
-      map->current = i_index;
+      map->current = i;
       return;
     }
   }
