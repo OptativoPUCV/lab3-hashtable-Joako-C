@@ -202,3 +202,15 @@ Thu 07 Sep 2023 04:31:59 PM UTC:
  tests:  11|2
 total_score: 50/70
 50391f9
+Thu 07 Sep 2023 04:32:17 PM UTC: 
+ hashmap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘eraseMap’:
+hashmap.c:96:22: error: ‘i_index’ undeclared (first use in this function); did you mean ‘rindex’?
+   96 |       map->current = i_index;
+      |                      ^~~~~~~
+      |                      rindex
+hashmap.c:96:22: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+95a62fd

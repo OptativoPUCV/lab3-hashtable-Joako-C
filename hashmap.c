@@ -82,8 +82,8 @@ HashMap* createMap(long capacity) {
 
 void eraseMap(HashMap* map, char* key) {
   for (int i = 0; i < map->capacity; i++) {
-    int i_index = (hash(key, map->capacity) + i) % map->capacity;
-    Pair* currentPair = map->buckets[i_index];
+    int i = (hash(key, map->capacity) + i) % map->capacity;
+    Pair* currentPair = map->buckets[i];
     
     if (currentPair == NULL) {
       map->current = -1;
