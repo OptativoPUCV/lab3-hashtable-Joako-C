@@ -91,16 +91,14 @@ void eraseMap(HashMap* map, char* key) {
     }
     
     if (strcmp(currentPair->key, key) == 0) {
-      free(currentPair->key);
-      free(currentPair->value);
-      free(currentPair);
-      map->buckets[i_index] = NULL;
+      currentPair->key = NULL; // Marcar la clave como NULL
       map->size--;
       map->current = i_index;
       return;
     }
   }
 }
+
 
 
 Pair* searchMap(HashMap* map, char* key) {
