@@ -93,7 +93,7 @@ Pair* searchMap(HashMap* map, char* key) {
     long i = hash(key, map->capacity);
 
     while (map->buckets[i] != NULL) {
-        Pair* current = map->buckets[index];
+        Pair* current = map->buckets[i];
         if (is_equal(current->key, key)) {
             return current;
         }
@@ -102,8 +102,6 @@ Pair* searchMap(HashMap* map, char* key) {
 
     return NULL;
 }
-
-
 
 Pair * firstMap(HashMap * map) {
 
