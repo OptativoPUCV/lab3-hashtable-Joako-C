@@ -91,7 +91,7 @@ void eraseMap(HashMap* map, char* key) {
     }
     
     if (strcmp(currentPair->key, key) == 0) {
-      currentPair->key = NULL; // Marcar la clave como NULL
+      currentPair->key = NULL;
       map->size--;
       map->current = i_index;
       return;
