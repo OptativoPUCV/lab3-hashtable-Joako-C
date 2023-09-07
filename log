@@ -144,3 +144,22 @@ hashmap.c:112:8: error: unused variable ‘original_i’ [-Werror=unused-variabl
 cc1: all warnings being treated as errors
 Compilation failed
 c63f48b
+Thu 07 Sep 2023 04:28:52 PM UTC: 
+ hashmap.c | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘searchMap’:
+hashmap.c:112:21: error: ‘i’ undeclared (first use in this function)
+  112 |   long original_i = i;
+      |                     ^
+hashmap.c:112:21: note: each undeclared identifier is reported only once for each function it appears in
+hashmap.c:123:18: error: ‘original_index’ undeclared (first use in this function); did you mean ‘original_i’?
+  123 |     if (index == original_index) {
+      |                  ^~~~~~~~~~~~~~
+      |                  original_i
+hashmap.c:112:8: error: unused variable ‘original_i’ [-Werror=unused-variable]
+  112 |   long original_i = i;
+      |        ^~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+c4312d7
