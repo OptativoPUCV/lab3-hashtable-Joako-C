@@ -126,7 +126,7 @@ Pair* searchMap(HashMap* map, char* key) {
       return NULL;
     }
   }
-  
+  map->current = -1;
   return NULL;
 }
 
