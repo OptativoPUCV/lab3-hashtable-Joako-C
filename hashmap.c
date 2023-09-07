@@ -53,7 +53,7 @@ void insertMap(HashMap* map, char* key, void* value) {
 
     new_pair->next = map->buckets[index];
     map->buckets[index] = new_pair;
-    map->size+;
+    map->size++;
 }
 
 

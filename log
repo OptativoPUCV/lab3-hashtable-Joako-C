@@ -21,3 +21,13 @@ hashmap.c:56:15: error: expected expression before ‘;’ token
       |               ^
 Compilation failed
 dd68ef7
+Thu 07 Sep 2023 03:37:48 PM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:54:13: error: ‘Pair’ has no member named ‘next’
+   54 |     new_pair->next = map->buckets[index];
+      |             ^~
+Compilation failed
+ee9d7c0
