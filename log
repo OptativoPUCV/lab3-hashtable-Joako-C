@@ -225,3 +225,9 @@ hashmap.c:85:39: error: ‘i’ may be used uninitialized in this function [-Wer
 cc1: all warnings being treated as errors
 Compilation failed
 59bb5aa
+Thu 07 Sep 2023 04:33:31 PM UTC: 
+ hashmap.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+ tests:  11|2
+total_score: 50/70
+aa4508c
