@@ -91,20 +91,20 @@ Pair* searchMap(HashMap* map, char* key) {
   }
 
   long i = hash(key, map->capacity);
-  long current_i = i;
-
 
   while (map->buckets[i] != NULL) {
     Pair* current = map->buckets[i];
     if (is_equal(current->key, key)) {
       return current;
     }
+
     i = (i + 1) % map->capacity;
-    if (i == current_i) {
-      break;
+    
+    if (i == hash(key, map->capacity)) {
+      return NULL;
     }
   }
-
+  
   return NULL;
 }
 
