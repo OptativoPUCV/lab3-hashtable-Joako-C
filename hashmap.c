@@ -120,21 +120,18 @@ Pair* searchMap(HashMap* map, char* key) {
     return NULL;
 }
 
-
-Pair* firstMap(HashMap* map) {
-  if (map == NULL || map->size == 0) {
-    return NULL;
-  }
-
-  for (long i = 0; i < map->capacity; i++) {
-    if (map->buckets[i] != NULL && map->buckets[i]->key != NULL) {
-      map->current = i; // Actualizar el índice actual
-      return map->buckets[i];
+Pair * firstMap(HashMap * map) {
+  for(int i = 0; i < map->capacity;i++){
+    struct Pair* currentpair = map->buckets[i];
+    if(currentpair != NULL && currentpair->key != NULL){
+      map->current = i;
+      return currentpair;
     }
   }
-
+  map->current = -1;
   return NULL;
 }
+
 
 Pair * nextMap(HashMap * map) {
 
