@@ -47,3 +47,19 @@ Thu 07 Sep 2023 03:48:00 PM UTC:
  tests:  2|5
 total_score: 20/70
 485881d
+Thu 07 Sep 2023 03:52:41 PM UTC: 
+ hashmap.c | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
+In file included from test.c:4:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:56:23: error: ‘Pair’ has no member named ‘next’
+   56 |         while (current->next != NULL) {
+      |                       ^~
+hashmap.c:57:30: error: ‘Pair’ has no member named ‘next’
+   57 |             current = current->next;
+      |                              ^~
+hashmap.c:59:16: error: ‘Pair’ has no member named ‘next’
+   59 |         current->next = new_pair;
+      |                ^~
+Compilation failed
+99999b0
