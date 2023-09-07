@@ -55,10 +55,34 @@ void insertMap(HashMap* map, char* key, void* value) {
     map->size++;
 }
 
-void enlarge(HashMap * map) {
-    enlarge_called = 1; //no borrar (testing purposes)
+void enlarge(HashMap* map) {
+  enlarge_called = 1;
 
+  if (map == NULL) {
+    return;
+  }
 
+  long new_capacity = map->capacity * 2;
+  Pair** new_buckets = (Pair**)calloc(new_capacity, sizeof(Pair*));
+
+  if (new_buckets == NULL) {
+    return;
+  }
+
+  for (long i = 0; i < map->capacity; i++) {
+    Pair* currentPair = map->buckets[i];
+    if (currentPair != NULL && currentPair->key != NULL) {
+      long index = hash(currentPair->key, new_capacity);
+      while (new_buckets[index] != NULL) {
+        index = (index + 1) % new_capacity;
+      }
+      new_buckets[index] = currentPair;
+    }
+  }
+
+  free(map->buckets);
+  map->buckets = new_buckets;
+  map->capacity = new_capacity;
 }
 
 
@@ -78,7 +102,6 @@ HashMap* createMap(long capacity) {
     }
     return map;
 }
-
 
 void eraseMap(HashMap* map, char* key) {
   for (int i = 0; i < map->capacity; i++) {
